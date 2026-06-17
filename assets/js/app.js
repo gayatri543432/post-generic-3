@@ -47,7 +47,7 @@ function makeApiCall(methodName, api_url, body = null, successCb,erroCb) {
 
         if (xhr.status >= 200 && xhr.status <= 299) {
 
-            let res = xhr.response ? JSON.parse(xhr.response) : {};
+            let res =JSON.parse(xhr.response) 
 
             if (methodName === 'GET' && Array.isArray(res)) {
                 successCb(res.reverse());
